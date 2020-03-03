@@ -16,6 +16,11 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     @task.save
     redirect_to task_path(@task)
+    # la methode create est appeler suite à ces etapes :
+    # je submit ds le form
+    # ca envoie une requete http en post - je peux le voir en inspectant le form ds linspecteur
+    # ds le routes.rb, le post renvoi vers cette methode create ou je suis actuellement
+    # la methode create est appliqué
   end
 
   def edit
@@ -24,6 +29,11 @@ class TasksController < ApplicationController
   def update
     @task.update(task_params)
     redirect_to task_path(@task)
+    # la methode update est appeler suite à ces etapes :
+    # je submit ds le form
+    # ca envoie une requete http en patch - je peux le voir en inspectant le form ds linspecteur, html ecrit post
+    # ds le routes.rb, le patch renvoi vers cette methode update ou je suis actuellement
+    # la methode update est appliqué
   end
 
   def destroy
